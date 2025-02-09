@@ -108,6 +108,7 @@ class _CompletedWidgetState extends State<CompletedWidget> {
                     'Completed',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Inter',
+                          fontSize: 25.0,
                           letterSpacing: 0.0,
                         ),
                   ),
