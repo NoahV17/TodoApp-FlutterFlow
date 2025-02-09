@@ -77,8 +77,8 @@ class _LoginWidgetState extends State<LoginWidget>
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    'https://picsum.photos/seed/541/600',
+                  child: Image.asset(
+                    'assets/images/305todo.png',
                     width: 120.0,
                     fit: BoxFit.contain,
                   ),
