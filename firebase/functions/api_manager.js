@@ -1,13 +1,33 @@
 const axios = require("axios").default;
 const qs = require("qs");
 
+async function _zenCallCall(context, ffVariables) {
+  var quote = ffVariables["quote"];
+
+  var url = `https://zenquotes.io/api/random`;
+  var headers = {};
+  var params = { q: ` ` };
+  var ffApiRequestBody = undefined;
+
+  return makeApiRequest({
+    method: "get",
+    url,
+    headers,
+    params,
+    returnBody: true,
+    isStreamingApi: false,
+  });
+}
+
 /// Helper functions to route to the appropriate API Call.
 
 async function makeApiCall(context, data) {
   var callName = data["callName"] || "";
   var variables = data["variables"] || {};
 
-  const callMap = {};
+  const callMap = {
+    ZenCallCall: _zenCallCall,
+  };
 
   if (!(callName in callMap)) {
     return {
